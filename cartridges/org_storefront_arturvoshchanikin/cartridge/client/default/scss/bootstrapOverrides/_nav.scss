@@ -1,0 +1,39 @@
+.nav-link {
+    margin-right: $spacer;
+}
+
+//
+// Tabs
+//
+
+.nav-tabs {
+    border: none;
+
+    .nav-link {
+        padding: $nav-link-padding-y 0;
+        color: $nav-tabs-link-color;
+    }
+
+    .nav-link.active,
+    .nav-item.show .nav-link {
+        color: $nav-tabs-link-active-color;
+        border: none;
+        border-bottom: $nav-tabs-border-bottom-width solid $nav-tabs-border-color;
+    }
+}
+
+//
+// Pills
+//
+
+.nav-pills {
+    .nav-link {
+        color: $nav-pills-link-color;
+
+        &.disabled {
+            color: $nav-link-disabled-color;
+            background-color: $trans;
+            border-color: $trans;
+        }
+    }
+}

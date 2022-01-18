@@ -1,0 +1,27 @@
+<div class="container">
+    <p>${Resource.msg('training.starts', 'common_en_US', null)}</p>
+    <hr />
+    <iscomment>
+        <div class="row">
+            <button type="" id="f-changer">Change boolValue</button>
+            <div>${pdict.booleanFlag}</div>
+        </div>
+    </iscomment>
+    <div class="column">
+        <isif condition="${pdict.booleanFlag}">
+            <h3>${Resource.msg('training.h3.array', 'common_en_US', null)}</h3>
+            <b>${pdict.arrayToIterate}</b>
+            <isloop items="${pdict.arrayToIterate}" var="arrItem">
+                <p>${arrItem}</p>
+            </isloop>
+        <iselse/>
+            <h3>${Resource.msg('training.h3.object', 'common_en_US', null)}</h3>
+            <b>${JSON.stringify(pdict.objectToIterate)}</b>
+            <ul>
+                <isloop items="${Object.keys(pdict.objectToIterate)}" var="objItems">
+                    <li>${objItems} ${pdict.objectToIterate[objItems]}</li>
+                </isloop>
+            </ul>
+        </isif>
+    </div>
+</div>

@@ -1,0 +1,817 @@
+@import "~org/variables";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+.sg-sidenav-icon {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    padding: 0.5em;
+    border-radius: 4px;
+    background-color: white;
+    border-bottom: 2px solid $gray-500;
+    border-right: 2px solid $gray-500;
+
+    @include media-breakpoint-up(sm) {
+        display: none;
+    }
+}
+
+.sg-sidenav-icon-border {
+    border: none;
+}
+
+.sg-sidenav {
+    font-family: $font-family-base;
+    width: 100%;
+    position: fixed;
+    height: 180px;
+    top: 0;
+    display: none;
+    overflow-x: hidden;
+    padding: 0 1.2em;
+    background-color: white;
+    z-index: 1;
+    padding-left: 3em;
+    border-bottom: 2px solid $gray-500;
+
+    .section-nav {
+        font-weight: bold;
+    }
+
+    @include media-breakpoint-up(sm) {
+        width: 27%;
+        height: 100%;
+        padding: 0 1em 3em;
+        display: block !important;
+        left: 0;
+        border: none;
+
+        .section-nav {
+            margin-top: 0.5em;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        width: 21%;
+    }
+
+    li {
+        list-style-type: none;
+        font-size: 14px;
+        padding-left: 0.3em;
+
+        @include media-breakpoint-up(sm) {
+            font-size: 14px;
+        }
+
+        @include media-breakpoint-up(md) {
+            font-size: 18px;
+        }
+    }
+
+    .list-link:hover {
+        background-color: rgba(135, 206, 235, 0.3);
+    }
+}
+
+.pt_styleguide {
+    header,
+    footer,
+    .header-banner {
+        display: none;
+    }
+
+    .wrapper {
+        margin: 1em;
+
+        @include media-breakpoint-up(sm) {
+            margin-left: 27%;
+            padding-left: 1em;
+        }
+
+        @include media-breakpoint-up(md) {
+            margin-left: 21%;
+            padding-left: 1em;
+        }
+    }
+
+    .section {
+        padding: 0.5em;
+        background: $gray-200;
+        margin: 1em 0;
+
+        @include media-breakpoint-up(sm) {
+            padding: 0.5em 0 0.5em 1em;
+        }
+    }
+
+    h1 {
+        margin-top: 1em;
+
+        @include media-breakpoint-up(sm) {
+            margin-top: 0;
+        }
+    }
+
+    h3,
+    h4,
+    p {
+        word-break: break-all;
+
+        &.sub-section {
+            margin: 1em;
+            margin-left: 0;
+            padding: 0.2em 0 0.2em 1em;
+            color: $gray-500;
+            border-left: 4px solid $gray-400;
+            background: none;
+        }
+    }
+
+    code {
+        display: inline-block;
+        margin: 1em 0 0.5em;
+        padding: 0.3em;
+        background: rgba($gray-200, 0.6);
+        clear: both;
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    .spec {
+        color: $gray-400;
+        margin-top: 0.5em;
+    }
+
+    .flex-container {
+        display: flex;
+
+        &.color,
+        &.gradient,
+        &.sg-shadows {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            text-align: center;
+
+            .item {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: stretch;
+                flex: 0 1 200px;
+                margin: 0 auto 1em;
+
+                > *:not(:first-child) {
+                    flex: 1 1 100%;
+                }
+
+                @include media-breakpoint-up(md) {
+                    flex: 0 1 23%;
+                    margin: 0 1% 1em;
+                }
+            }
+        }
+
+        &.sg-motion {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            text-align: center;
+
+            .item {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: stretch;
+                flex: 0 1 200px;
+                margin: 0 auto 1em;
+
+                > *:not(:first-child) {
+                    flex: 1 1 100%;
+                }
+            }
+        }
+
+        &.sg-borders {
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .item {
+                flex: 1 1 100%;
+
+                @include media-breakpoint-up(sm) {
+                    flex: 1 1 45%;
+                    margin: 0 5% 2em 0;
+
+                    &:last-child {
+                        flex: 0 0 45%;
+                    }
+                }
+            }
+        }
+    }
+
+    .sg-type {
+        .item {
+            margin-bottom: 2em;
+
+            > * {
+                flex: 1 1 30%;
+                margin-right: 1%;
+
+                &:nth-child(2) {
+                    align-self: start;
+                }
+            }
+        }
+    }
+
+    .sg-buttons {
+        .item {
+            margin-bottom: 2em;
+
+            .btn {
+                margin-right: 2em;
+                margin-bottom: 1em;
+            }
+
+            .spec,
+            code {
+                margin: 0;
+                margin-bottom: 0.7em;
+            }
+        }
+    }
+
+    .sg-forms {
+        @include media-breakpoint-up(md) {
+            width: 25%;
+        }
+    }
+
+    .sg-grid {
+        .col {
+            min-height: 400px;
+            background: mistyrose;
+            padding-right: 4px;
+            padding-left: 4px;
+            border-right: $border;
+
+            &:last-child {
+                border-right: none;
+            }
+            @include media-breakpoint-up(md) {
+                padding-right: 12px;
+                padding-left: 12px;
+            }
+        }
+    }
+
+    .sg-grid-demo {
+        .col {
+            border: $border;
+
+            span {
+                float: right;
+            }
+
+            .sm,
+            .md,
+            .lg,
+            .xl {
+                display: none;
+            }
+
+            @include media-breakpoint-up(sm) {
+                .xs {
+                    display: none;
+                }
+
+                .sm {
+                    display: block;
+                }
+            }
+
+            @include media-breakpoint-up(md) {
+                .sm {
+                    display: none;
+                }
+
+                .md {
+                    display: block;
+                }
+            }
+
+            @include media-breakpoint-up(lg) {
+                .md {
+                    display: none;
+                }
+
+                .lg {
+                    display: block;
+                }
+            }
+
+            @include media-breakpoint-up(xl) {
+                .lg {
+                    display: none;
+                }
+
+                .xl {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .sg-spacers {
+        .spacer {
+            background: mistyrose;
+            font-size: 10px;
+            text-align: center;
+
+            &._8 {
+                height: 8px;
+            }
+
+            &._24 {
+                height: 24px;
+            }
+
+            &._40 {
+                height: 40px;
+            }
+
+            &._72 {
+                height: 72px;
+            }
+        }
+
+        small {
+            display: block;
+        }
+    }
+
+    .sg-lists {
+        ul, // hack for dashes
+        ol {
+            ul,
+            ol {
+                list-style-type: none;
+
+                li::before {
+                    content: "\2014";
+                    position: absolute;
+                    margin-left: -20px;
+                }
+            }
+        }
+    }
+
+    .sg-borders {
+        // Set the list of border blocks in order of how they should appear in the style guide.
+        $bordercolorlist: (
+            $border-color,
+            $border-color,
+            $border2-color,
+            $border3-color,
+            $border4-color
+        );
+
+        @for $i from 1 through length($bordercolorlist) {
+            $c: nth($bordercolorlist, $i);
+
+            .item:nth-child(#{$i}) .border-block {
+                border-color: $c;
+                border-bottom: 1px solid $c;
+                border-left: 1px solid $c;
+            }
+
+            .item:nth-child(2) .border-block {
+                border-width: 4px;
+            }
+        }
+    }
+
+    .sg-shadows {
+        // Set the list of shadow blocks in order of how they should appear in the style guide.
+        $shadowlist: ($shadow, $shadow2, $shadow3);
+
+        @for $i from 1 through length($shadowlist) {
+            $c: nth($shadowlist, $i);
+
+            .item:nth-child(#{$i}) .shadow-block {
+                box-shadow: $c;
+                border: $border;
+                background: $white;
+            }
+        }
+    }
+
+    .sg-product-tiles {
+        .product-tile {
+            max-width: 300px;
+
+            @include media-breakpoint-down(md) {
+                min-height: 23.4375em;
+            }
+
+            @include media-breakpoint-down(sm) {
+                min-height: 19.6875em;
+            }
+
+            @include media-breakpoint-down(xs) {
+                min-height: 13.4375em;
+            }
+
+            margin-bottom: 0;
+
+            .tile-body {
+                padding: 0.625em 0.875em 1.5em;
+
+                .color-swatches {
+                    min-height: 2.25em;
+
+                    .product-tile-color-label {
+                        cursor: pointer;
+                        font-size: 1em;
+
+                        @include media-breakpoint-down(md) {
+                            font-size: 0.9375em;
+                        }
+
+                        @include media-breakpoint-down(sm) {
+                            font-size: 0.8125em;
+                        }
+                    }
+                }
+
+                .price {
+                    font-size: 1.125em;
+                    margin: 0.875em 0;
+
+                    @include media-breakpoint-down(md) {
+                        font-size: 1.0625em;
+                    }
+
+                    @include media-breakpoint-down(sm) {
+                        font-size: 1em;
+                    }
+
+                    .tiered {
+                        font-size: 0.875em;
+
+                        .value {
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+                .coming-soon-tile {
+                    text-align: center;
+                }
+
+                .pdp-link {
+                    line-height: 22px;
+
+                    a {
+                        font-size: 1em;
+                        text-decoration: none;
+
+                        @include media-breakpoint-down(md) {
+                            font-size: 0.9375em;
+                        }
+
+                        @include media-breakpoint-down(sm) {
+                            font-size: 0.8125em;
+                        }
+                    }
+                }
+
+                .ratings {
+                    font-size: 0.9em;
+                    color: $gray-300;
+                }
+            }
+
+            .image-container {
+                position: relative;
+                overflow: auto;
+
+                .quickview {
+                    position: absolute;
+                    bottom: 1rem;
+                    right: 1rem;
+                    padding: 0.5em;
+                    background-color: $white;
+                    color: $gray-400;
+                    font-weight: bold;
+
+                    i {
+                        &.fa-expand {
+                            color: rgba(0, 0, 0, 0.7);
+                        }
+
+                        &.fa-circle {
+                            color: rgba(255, 255, 255, 0.7);
+                            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+                        }
+                    }
+                }
+
+                .product-status {
+                    position: absolute;
+                    top: 0.25rem;
+                    left: 0.25rem;
+                    background-color: $gray-400;
+                    color: $white;
+                    padding: 0 1.5em;
+                    font-weight: bold;
+                }
+
+                a {
+                    display: block;
+
+                    .tile-image {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .sg-cards {
+        .card-deck {
+            @include media-breakpoint-up(sm) {
+                display: flex;
+                flex-flow: row wrap;
+
+                .card {
+                    margin-bottom: $card-deck-margin;
+                    flex: 1 1 auto;
+
+                    @include media-breakpoint-up(md) {
+                        flex: 1 0 40%;
+                    }
+
+                    @include media-breakpoint-up(lg) {
+                        flex: 1 0 20%;
+                    }
+                }
+            }
+        }
+    }
+
+    .sg-motion {
+        .card {
+            height: 140px;
+            width: 140px;
+            background-color: $denim;
+
+            &.animation.easeincubic:hover {
+                animation: $ease-in-cubic;
+            }
+
+            &.animation.easeoutcubic:hover {
+                animation: $ease-out-cubic;
+            }
+
+            &.hover:hover {
+                transform: $card-hover-scale;
+                transition: all 0.5s ease;
+            }
+        }
+
+        .btn {
+            height: 40px;
+            width: 200px;
+
+            &.hover:hover {
+                transform: $button-hover-scaley;
+                transition: all 0.5s ease;
+            }
+        }
+    }
+}
+
+// Colors
+
+.item {
+    .color-block {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin-bottom: 5px;
+        color: $gray-100;
+    }
+
+    .color-var {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .color-spec {
+        text-align: center;
+        line-height: 150%;
+        margin-bottom: 10px;
+    }
+
+    .gradient-block {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 5px;
+    }
+
+    .border-block {
+        height: 30px;
+    }
+
+    .shadow-block {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+// TODO - Using this mixin instead of the utilities - do we want to use utilities?
+
+.brand-colors {
+    // Set the list of color blocks in order of how they should appear in the style guide.
+    $colorlist: ($brand-main, $brand-second, $brand-light, $brand-dark);
+
+    @for $i from 1 through length($colorlist) {
+        $c: nth($colorlist, $i);
+
+        .item:nth-child(#{$i}) .color-block {
+            background-color: $c;
+            border-radius: $border-radius;
+
+            &::before {
+                content: "#{$c}";
+                color: $white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                @if lightness($c) > 75 {
+                    color: $gray-500;
+                }
+            }
+
+            @if lightness($c) > lightness($light-gray) {
+                border: 1px solid $gray-500;
+            }
+        }
+    }
+}
+
+.ui-colors {
+    // Set the list of color blocks in order of how they should appear in the style guide.
+    $colorlist: (
+        $primary,
+        $secondary,
+        $dark,
+        $light,
+        $success,
+        $info,
+        $warning,
+        $danger
+    );
+
+    @for $i from 1 through length($colorlist) {
+        $c: nth($colorlist, $i);
+
+        .item:nth-child(#{$i}) .color-block {
+            background-color: $c;
+            border-radius: $border-radius;
+
+            &::before {
+                content: "#{$c}";
+                color: $white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                @if lightness($c) > 75 {
+                    color: $gray-500;
+                }
+            }
+
+            @if lightness($c) > lightness($light-gray) {
+                border: 1px solid $gray-500;
+            }
+        }
+    }
+}
+
+.accent-colors {
+    // Set the list of color blocks in order of how they should appear in the style guide.
+    $colorlist: ($accent-1, $accent-2, $accent-3, $accent-4);
+
+    @for $i from 1 through length($colorlist) {
+        $c: nth($colorlist, $i);
+
+        .item:nth-child(#{$i}) .color-block {
+            background-color: $c;
+            border-radius: $border-radius;
+
+            &::before {
+                content: "#{$c}";
+                color: $white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                @if lightness($c) > 75 {
+                    color: $gray-100;
+                }
+            }
+
+            @if lightness($c) > lightness($light-gray) {
+                border: 1px solid $gray-100;
+            }
+        }
+    }
+}
+
+.gray-colors {
+    // Set the list of color blocks in order of how they should appear in the style guide.
+    $colorlist: (
+        $black,
+        $gray-500,
+        $gray-400,
+        $gray-300,
+        $gray-200,
+        $gray-100,
+        $white
+    );
+
+    @for $i from 1 through length($colorlist) {
+        $c: nth($colorlist, $i);
+
+        .item:nth-child(#{$i}) .color-block {
+            background-color: $c;
+            border-radius: $border-radius;
+
+            &::before {
+                content: "#{$c}";
+                color: $white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                @if lightness($c) > 75 {
+                    color: $gray-500;
+                }
+            }
+
+            @if lightness($c) > lightness($light-gray) {
+                border: 1px solid $gray-500;
+            }
+        }
+    }
+}
+
+// Type
+
+.label-xl {
+    font-size: $font-size-lg;
+}
+
+.label-sm {
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+}
+
+.label-xs {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+}
+
+// Links
+
+a:hover {
+    color: $primary;
+}
+
+.main-nav {
+    font-size: $font-size-sm;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.link-primary {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+}
+
+.link-secondary {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    text-decoration: $link-decoration-alt;
+}

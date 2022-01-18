@@ -1,0 +1,20 @@
+.breadcrumb {
+    background-color: $breadcrumb-bg;
+}
+
+.breadcrumb-item {
+    font-weight: $font-weight-bold;
+
+    a {
+        color: $breadcrumb-before-color;
+    }
+
+    // The separator between breadcrumbs (by default, a forward-slash: "/")
+    + .breadcrumb-item::before {
+        color: $breadcrumb-before-color;
+    }
+
+    &.active {
+        color: $breadcrumb-active-color;
+    }
+}

@@ -1,0 +1,73 @@
+//
+// Base styles
+//
+
+.card {
+    margin-bottom: 1em;
+
+    .list-group {
+        margin-left: -($card-spacer-x);
+        margin-right: -($card-spacer-x);
+    }
+
+    #accordion & {
+        border: none;
+        border-bottom: $card-border-width solid $card-border-color;
+        border-radius: none;
+
+        .card-header {
+            padding: $accordion-spacer-y $accordion-spacer-x;
+            border-bottom: $card-border-width solid $card-border-color;
+            border-top: none;
+            background-color: $white;
+
+            &:first-child {
+                border-radius: 0;
+                border-bottom: none;
+            }
+
+            .btn {
+                padding: $accordion-btn-y $accordion-btn-x;
+
+                &.btn-link {
+                    color: $gray-500;
+                    font-size: $font-size-base;
+                    font-weight: 700;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                    &::before {
+                        content: "";
+                        float: left;
+                        width: 20px;
+                        height: 20px;
+                        margin: 3px 5px 0 0;
+                        background: $svg-arrow-right no-repeat 0 0;
+                        transform: rotate(90deg);
+                    }
+
+                    &.collapsed {
+                        &::before {
+                            transform: rotate(0deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        .card-body {
+            padding: $accordion-spacer-x;
+            margin-left: $accordion-paragraph-margin;
+        }
+    }
+}
+
+.card-link {
+    color: $primary;
+    @include hover {
+        text-decoration: none;
+    }
+}

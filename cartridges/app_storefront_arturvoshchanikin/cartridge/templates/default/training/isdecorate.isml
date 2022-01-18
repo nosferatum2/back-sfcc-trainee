@@ -1,0 +1,4 @@
+<isdecorate template="training/layout/page">
+    <h3>${Resource.msg('isdecorate.heading.h3', 'common_en_US', null)}</h3>
+    <isinclude template="training/training" />
+</isdecorate>

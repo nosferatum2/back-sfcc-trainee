@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+       <field formid="firstName" label="label.input.firstname.profile" type="string" mandatory="true" max-length="50" />
+       <field formid="lastName" label="label.input.lastname.profile" type="string" mandatory="true" max-length="50" />
+       <field formid="email" label="label.input.email.profile" type="string" mandatory="true" max-length="50" />
+       <!-- actions provided the subscription -->
+       <action formid="submit" valid-form="true" />
+</form>

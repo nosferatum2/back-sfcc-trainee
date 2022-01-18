@@ -1,0 +1,107 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/subscribeForm.js');
+        assets.addCss('/css/homePage.css');
+    </isscript>
+    <iscomment>
+        <div class="container">
+            <div class="row">
+                <form action="${pdict.actionUrl}" class="needs-validation" method="POST" name="newsletterForm">
+                    <div class="form-group required">
+                        <label for="firstName">${Resource.msg('label.input.firstname.profile', 'forms', null)}</label>
+                        <input type="input" id="firstName" name="firstName" class="form-control" placeholder="Artur"
+                            <isprint value="${pdict.newsletterForm.firstName}" encoding="off" />>
+
+                        <label for="lastName">${Resource.msg('label.input.lastname.profile', 'forms', null)}</label>
+                        <input type="input" id="lastName" name="lastName" class="form-control"
+                            placeholder="Voshchanikin" <isprint value="${pdict.newsletterForm.lastName}"
+                            encoding="off" />>
+
+                        <label for="email">${Resource.msg('label.input.email.profile', 'forms', null)}</label>
+                        <input type="input" id="email" name="email" class="form-control" placeholder="example@test.com"
+                            <isprint value="${pdict.newsletterForm.email}" encoding="off" />>
+                    </div>
+                    <button type="submit" class="btn btn-block btn-primary">${Resource.msg('button.submit', 'forms', null)}</button>
+                </form>
+
+
+            </div>
+        </div>
+    </iscomment>
+
+    <div class="container">
+        <iscomment>
+            <div class="row">
+                <form action="${pdict.actionUrlAjax}" class="newsletter-form-ajax" method="POST"
+                    name="newsletter-form-ajax">
+                    <div class="form-group required">
+                        <label for="firstName">${Resource.msg('label.input.firstname.profile', 'forms', null)}</label>
+                        <input type="input" id="firstName" name="firstName" class="form-control"
+                            placeholder="First name" <isprint value="${pdict.newsletterForm.firstName}"
+                            encoding="off" />>
+
+                        <label for="lastName">${Resource.msg('label.input.lastname.profile', 'forms', null)}</label>
+                        <input type="input" id="lastName" name="lastName" class="form-control" placeholder="Last name"
+                            <isprint value="${pdict.newsletterForm.lastName}" encoding="off" />>
+
+                        <label for="email">${Resource.msg('label.input.email.profile', 'forms', null)}</label>
+                        <input type="input" id="email" name="email" class="form-control" placeholder="example@test.com"
+                            <isprint value="${pdict.newsletterForm.email}" encoding="off" />>
+                    </div>
+                    <button type="submit"
+                        class="btn btn-block btn-primary newsletter-form-ajax-submit">${Resource.msg('button.submit', 'forms', null)}</button>
+                    <button type="submit" class="btn btn-block btn-primary">${Resource.msg('button.cancel', 'forms', null)}</button>
+                </form>
+            </div>
+        </iscomment>
+
+        <hr />
+
+        <div class="newsletter-signup-message">
+        </div>
+        <div class="row">
+            <form action="${pdict.actionUrlAjax}" class="newsletter-form-ajax" method="POST" <isprint
+                value="${pdict.newsletterForm.attributes}" />>
+
+            <!-- First Name -->
+            <div class="form-group ${pdict.newsletterForm.firstName.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="firstName">
+                    <isprint value="${pdict.newsletterForm.firstName.label}" encoding="htmlcontent" />
+                </label>
+                <input type="input" class="form-control" name="firstName" id="firstName" placeholder="First name"
+                    <isprint value="${pdict.newsletterForm.firstName.attributes}" encoding="off" />>
+                <div class="invalid-feedback"></div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group ${pdict.newsletterForm.lastName.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="lastName">
+                    <isprint value="${pdict.newsletterForm.lastName.label}" encoding="htmlcontent" />
+                </label>
+                <input type="input" class="form-control" name="lastName" id="lastName" placeholder="Last name" <isprint
+                    value="${pdict.newsletterForm.lastName.attributes}" encoding="off" />>
+                <div class="invalid-feedback"></div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group ${pdict.newsletterForm.email.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="email">
+                    <isprint value="${pdict.newsletterForm.email.label}" encoding="htmlcontent" />
+                </label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="your@mail.com" <isprint
+                    value="${pdict.newsletterForm.email.attributes}" encoding="off" />>
+                <div class="invalid-feedback"></div>
+            </div>
+
+            <!-- Subscribe Button -->
+            <button type="submit" class="btn btn-save btn-block btn-primary newsletter-form-ajax-submit">
+                ${Resource.msg('button.submit', 'forms', null)}
+            </button>
+            </form>
+        </div>
+    </div>
+    <isscript>
+
+    </isscript>
+</isdecorate>

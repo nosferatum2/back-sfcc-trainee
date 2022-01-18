@@ -1,0 +1,124 @@
+@import "../utilities/swatch";
+@import "productCommon";
+
+.quick-view-dialog,
+.choose-bonus-product-dialog {
+    max-width: 56.25em;
+
+    .selectable-bonus-product-line-item {
+        margin-top: 0.2em;
+        margin-bottom: 0.2em;
+        padding-top: 0.3em;
+        padding-bottom: 0.3em;
+    }
+
+    .beenSelected {
+        background-color: $gray-400;
+    }
+
+    .modal-header {
+        background-color: $gray-400;
+        border-bottom: $border5;
+        border-top-left-radius: 0.1875rem;
+        border-top-right-radius: 0.1875rem;
+
+        .full-pdp-link {
+            color: $primary;
+        }
+
+        .close {
+            font-size: $quickview-font-size5;
+            line-height: 1.5rem;
+        }
+    }
+
+    .modal-title {
+        font-size: $font-size-base;
+    }
+
+    .product-name {
+        font-size: $quickview-font-size4;
+    }
+
+    .swatch-circle {
+        // $white will be replaced by color image background via Javascript
+        @include swatch(2.5em, $white);
+    }
+
+    a[disabled] .swatch-circle {
+        cursor: not-allowed;
+
+        &.color-value.selected::after {
+            background-color: $gray-100;
+        }
+    }
+
+    .availablity-container {
+        text-align: right;
+    }
+
+    .availablity-container,
+    .size-chart {
+        margin-top: 0.938em;
+    }
+
+    .modal-content {
+        border: $border6;
+    }
+
+    .modal-body {
+        max-height: 28.125em; /* 450/16 */
+        overflow-y: auto;
+    }
+
+    button.close {
+        font-size: $font-size-lg;
+    }
+
+    .modal-footer {
+        background-color: $white;
+        border: none;
+        border-bottom-right-radius: 0.1875rem;
+        border-bottom-left-radius: 0.1875rem;
+
+        .prices .price {
+            font-size: $quickview-font-size3;
+        }
+    }
+
+    .prices .sales {
+        font-size: $quickview-font-size2;
+    }
+
+    .promotions {
+        text-align: left;
+        color: $danger;
+    }
+
+    .bonus-summary {
+        @include media-breakpoint-down(sm) {
+            font-size: $quickview-font-size1;
+        }
+
+        .bonus-product-name {
+            @include media-breakpoint-down(sm) {
+                padding: 0;
+            }
+        }
+    }
+
+    .pre-cart-products {
+        margin-right: 0.125em;
+    }
+
+    .color-attribute {
+        border: none;
+        padding: 0;
+        background: none;
+    }
+
+    .non-input-label {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+}

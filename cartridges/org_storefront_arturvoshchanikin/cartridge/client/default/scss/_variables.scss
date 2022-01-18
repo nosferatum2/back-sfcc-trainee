@@ -1,0 +1,464 @@
+@import "bootstrap/scss/functions";
+
+// font-awesome font file locations in relation to target location of the css file.
+$fa-font-path: "../fonts";
+
+// flag icons location in relation to target location of the css file.
+$flag-icon-css-path: "../fonts/flags/";
+
+//--------------------------------
+//  COLORS
+//--------------------------------
+
+// Theme colors documentation: https://getbootstrap.com/docs/4.1/getting-started/theming/#theme-colors
+
+// Color Palette
+
+/* Variable names from http://chir.ag/projects/name-that-color */
+
+$white: #fff;
+$black: #000;
+$denim: #1976d3;
+$anakiwa: #88c4ff;
+$blumine: #1d568e;
+$orangepeel: #ff9f00;
+$creambrulee: #ffdb9d;
+$sapphire: #303e9f;
+$cinnabar: #e64a19;
+$pinegreen: #00796a;
+$japanese-laurel: #046808;
+$calypso: #31708f;
+$mustard: #ffe353;
+$tamarillo: #92110e;
+$california: #fe9803;
+$pomegranate: #e85118;
+$valencia: #d73731;
+$picton-blue: #44a7f2;
+$indigo: #3b76ca;
+$cornflower-blue: #4c93eb;
+$daisy-bush: #502ea8;
+$cerulean-blue: #2553b5;
+$trans: transparent;
+
+// Gray Colors - Bootstrap overrides
+$gray-100: #f8f9fb;
+$gray-200: #e8ecef;
+$gray-300: #cfd4da;
+$gray-400: #495056;
+$gray-500: #22252a;
+$gray-600: #22252a;
+$gray-700: #22252a;
+$gray-800: #22252a;
+$gray-900: #22252a;
+
+// Theme Mappings
+$colors: () !default;
+$colors: map-merge(
+    (
+        "denim": $denim,
+        "anakiwa": $anakiwa,
+        "blumine": $blumine,
+        "orangepeel": $orangepeel,
+        "creambrulee": $creambrulee,
+        "sapphire": $sapphire,
+        "cinnabar": $cinnabar,
+        "pinegreen": $pinegreen,
+        "japanese-laurel": $japanese-laurel,
+        "calypso": $calypso,
+        "mustard": $mustard,
+        "tamarillo": $tamarillo,
+        "california": $california,
+        "pomegranate": $pomegranate,
+        "valencia": $valencia,
+        "picton-blue": $picton-blue,
+        "indigo": $indigo,
+        "cornflower-blue": $cornflower-blue,
+        "daisy-bush": $daisy-bush,
+        "cerulean-blue": $cerulean-blue,
+        "trans": $trans,
+        "white": $white,
+        "black": $black
+    ),
+    $colors
+);
+
+$brand-main: $denim;
+$brand-second: $gray-400;
+$brand-light: $anakiwa;
+$brand-dark: $blumine;
+$primary: $denim;
+$secondary: $gray-400;
+$dark: $gray-500;
+$light: $gray-100;
+$success: $japanese-laurel;
+$info: $calypso;
+$warning: $mustard;
+$danger: $tamarillo;
+$accent-1: $sapphire;
+$accent-2: $cinnabar;
+$accent-3: $orangepeel;
+$accent-4: $pinegreen;
+$tertiary: $gray-500;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+    (
+        "brand-main": $brand-main,
+        "brand-second": $brand-second,
+        "brand-light": $brand-light,
+        "brand-dark": $brand-dark,
+        "primary": $primary,
+        "secondary": $secondary,
+        "dark": $dark,
+        "light": $light,
+        "success": $success,
+        "info": $info,
+        "warning": $warning,
+        "danger": $danger,
+        "accent-1": $accent-1,
+        "accent-2": $accent-2,
+        "accent-3": $accent-3,
+        "accent-4": $accent-4,
+        "tertiary": $tertiary
+    ),
+    $theme-colors
+);
+
+//--------------------------------
+//  OTHER THEME COLORS
+//--------------------------------
+
+$brand-success: $pinegreen;
+$brand-danger: $cinnabar;
+$brand-primary: $cerulean-blue;
+$light-gray: $gray-200;
+$slightly-darker-gray: $gray-300;
+$dark-gray: $gray-400;
+$darker-gray: $gray-500;
+$state-danger-text: $white;
+
+//--------------------------------
+//  ALERTS
+//--------------------------------
+
+$alert-bg-level: -10; // bootstrap override
+$alert-border-level: -9; // bootstrap override
+$alert-color-level: 4; // bootstrap override
+$alert-danger-bg: $brand-danger;
+$alert-success-bg: $brand-success;
+
+//--------------------------------
+//  BACKGROUNDS
+//--------------------------------
+
+// BG utility class documentation: https://getbootstrap.com/docs/4.0/utilities/colors/#background-color
+
+// Gradients
+// Gradients utility class documentation: https://getbootstrap.com/docs/4.0/utilities/colors/#background-gradient
+
+$enable-gradients: false; // bootstrap override -> must be set to true for gradients to be visible on the site
+
+//--------------------------------
+//  BORDERS / DIVIDERS
+//--------------------------------
+
+// TODO - Should we use the border utility classes instead?
+
+// Borders utility class documentation: https://getbootstrap.com/docs/4.0/utilities/borders/
+
+$border-success: 1px solid $success;
+$border-warning: 1px solid $warning;
+$border-danger: 1px solid $danger;
+$border-width: 1px; // could be bootstrap override
+$border-color: $gray-300; // default color - could be bootstrap override
+$border: 1px solid $border-color;
+$border-thick: 4px solid $border-color;
+$border2-color: $pinegreen;
+$border2: 1px solid $border2-color;
+$border3-color: $mustard;
+$border3: 1px solid $border3-color;
+$border4-color: $blumine;
+$border4: 1px solid $border4-color;
+$border5-color: $gray-200;
+$border5: 2px solid $border5-color;
+$border6: 1px solid rgba(0, 0, 0, 0.2);
+$horizontal-border-grey: $gray-200;
+$hr-border-color: $gray-200;
+$horizontal-rule-grey: $gray-200;
+
+//--------------------------------
+//  BOX SHADOWS
+//--------------------------------
+
+// TODO - Should we update to 4.1 so we can include the shadow utility?
+
+$enable-shadows: true; // bootstrap override
+$shadow: 0 8px 14px 0 rgba(224, 229, 238, 0.5);
+$shadow2: 0 8px 14px 0 rgba(0, 20px, 31px, 0.05);
+$shadow3: 0 8px 14px 0 rgba(0, 0, 0, 0.16);
+
+//--------------------------------
+//  TYPOGRAPHY
+//--------------------------------
+
+$font-size-base: 1rem; // sets base font size applied to html element
+$font-size-body: $font-size-base * 0.875; // font size applied to body element
+$font-size-xs: $font-size-base * 0.75;
+$body-color: $gray-500; //bootstrap override
+
+// Fonts
+
+// Displays
+$display1-size: 6rem; //bootstrap override
+$display2-size: 5rem; //bootstrap override
+
+// Headings
+
+$h1-font-size: $font-size-base * 3; //bootstrap override
+$h2-font-size: $font-size-base * 2.5; //bootstrap override
+$h3-font-size: $font-size-base * 2.25; //bootstrap override
+$h4-font-size: $font-size-base * 1.75; //bootstrap override
+$h5-font-size: $font-size-base * 1.25; //bootstrap override
+$h6-font-size: $font-size-xs; //bootstrap override
+
+// Weights
+
+$checkout-font-weight: 600;
+
+// Labels
+
+$label-xl: $font-size-base * 1.25;
+$label-sm: $font-size-base;
+$label-xs: $font-size-base * 0.75;
+
+//--------------------------------
+//  LINKS
+//--------------------------------
+
+$link-color: $gray-500; //bootstrap override
+$link-hover-color: $denim; //bootstrap override
+$link-decoration-alt: underline;
+
+//--------------------------------
+//  BUTTONS
+//--------------------------------
+
+$btn-icon-size: 12px;
+$btn-icon-spacing: 8px;
+$btn-link-color: $primary; //bootstrap override
+$btn-disabled-opacity: 1;
+$btn-disabled-main-color: $gray-400;
+$btn-disabled-main-bg: $gray-200;
+$btn-disabled-main-border-color: $gray-200;
+$btn-disabled-alt-color: $gray-500;
+$btn-disabled-alt-bg: $gray-300;
+$btn-disabled-alt-border-color: $gray-300;
+$btn-font-size: $font-size-body; //bootstrap override
+$font-size-lg: $font-size-base * 1.25; //bootstrap override
+$btn-padding-y-lg: 0.9rem; //bootstrap override
+
+//--------------------------------
+//  FORMS
+//--------------------------------
+// all bootstrap overrides
+$form-group-margin-bottom: 1.5rem;
+$input-border-color: $gray-300;
+$input-color: $gray-400;
+$input-border-radius: 0;
+$input-box-shadow: none;
+$input-bg: $gray-200;
+$input-placeholder-color: $gray-400;
+$custom-select-bg: $gray-200;
+$custom-select-border-radius: 0;
+$custom-select-focus-box-shadow: none;
+$input-padding-x: 0.75rem;
+$input-padding-y: 0.75rem;
+$custom-select-padding-y: 0.75rem;
+$custom-select-bg-size: 22px 22px;
+$custom-checkbox-indicator-border-radius: 0;
+$custom-control-indicator-box-shadow: none;
+$custom-control-indicator-bg: $white;
+$text-muted: $gray-400;
+
+//--------------------------------
+//  BUTTONS & FORMS
+//--------------------------------
+
+$input-btn-padding-y: 0.75rem; //bootstrap override
+$input-btn-padding-x: 1rem; //bootstrap override
+$btn-box-shadow: 0 0 0 transparent; //bootstrap override
+$btn-active-box-shadow: 0 0 0 transparent; //bootstrap override
+
+//--------------------------------
+//  DROPDOWN MENU
+//--------------------------------
+
+$menu-link: $gray-200;
+$close-menu-bg: $gray-200;
+$dropdown-link-hover-bg: $gray-200; //bootstrap override
+$dropdown-link-hover-color: $gray-200; //bootstrap override
+
+//--------------------------------
+// BREADCRUMBS
+//--------------------------------
+
+$breadcrumb-bg: $white;
+$breadcrumb-before-color: $denim;
+$breadcrumb-active-color: $gray-400; //bootstrap override
+$breadcrumb-divider-color: $gray-400; //bootstrap override
+
+//--------------------------------
+// CONTENT SWITCHER
+//--------------------------------
+
+$contentswitcher-active-color: $white;
+$contentswitcher-active-bg: $denim;
+
+//--------------------------------
+// Product Tile
+//--------------------------------
+
+$product-tile-promo: $pomegranate;
+$product-number-grey: $gray-400;
+
+//--------------------------------
+//  SPACING
+//--------------------------------
+
+// TODO - Units of 8px are used per styleguide spacing section
+
+$spacer: 1rem; // 16px
+$spacers: ();
+$spacers: map-merge(
+    (
+        0: 0,
+        1: ($spacer * 0.5), // 8px
+        2: $spacer,
+        // 16px
+        3: ($spacer * 1.5),
+        // 24px
+        4: ($spacer * 2),
+        // 32px
+        5: ($spacer * 2.5),
+        // 40px
+        6: ($spacer * 3),
+        // 48px
+        7: ($spacer * 3.5),
+        // 56px
+        8: ($spacer * 4),
+        // 64px
+        9: ($spacer * 4.5) // 72px
+    ),
+    $spacers
+);
+
+//This variable affects the `.h-*` and `.w-*` classes.
+$sizes: ();
+$sizes: map-merge(
+    (
+        25: 25%,
+        33: 33.3333%,
+        50: 50%,
+        66: 66.6666%,
+        75: 75%,
+        100: 100%
+    ),
+    $sizes
+);
+
+// Grid columns
+
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns: 12;
+$grid-gutter-width: 24px; // How do we want to update this to be reflective of the 8px spacing for mobile?
+
+//--------------------------------
+//  CARDS & ACCORDIONS
+//--------------------------------
+
+$accordion-spacer-y: 0.1rem;
+$accordion-spacer-x: 1rem;
+$accordion-btn-y: 0.5rem;
+$accordion-btn-x: 1.5rem;
+$accordion-paragraph-margin: 50px;
+
+//--------------------------------
+//  MODALS
+//--------------------------------
+
+$modal-border-top: 5px solid $primary;
+$modal-header-border-width: 0;
+$modal-header-border-color: transparent;
+
+//--------------------------------
+//  TABS
+//--------------------------------
+
+$nav-pills-link-color: $denim;
+$nav-pills-link-active-color: $white;
+$nav-pills-link-active-bg: $denim;
+$nav-tabs-link-color: $gray-500;
+$nav-tabs-link-active-color: $denim;
+$nav-tabs-link-hover-border-color: $white;
+$nav-link-disabled-color: $gray-400;
+$nav-tabs-border-color: $denim;
+$nav-tabs-border-bottom-width: 2px;
+
+//--------------------------------
+//  TABLES
+//--------------------------------
+
+$table-th-border-color: $primary;
+$table-border-color: $gray-300;
+
+//--------------------------------
+//  QUICKVIEW COMPONENT
+//--------------------------------
+
+$quickview-font-size1: $font-size-base * 0.625;
+$quickview-font-size2: $font-size-base * 1.5;
+$quickview-font-size3: $font-size-base * 1.6;
+$quickview-font-size4: $font-size-base * 1.875;
+$quickview-font-size5: $font-size-base * 2;
+
+//--------------------------------
+//  ICONOGRAPHY
+//--------------------------------
+
+// TODO - Is this how we want to do SVGs (it's the bootstrap way)? Or some other approach...
+
+$custom-select-indicator: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDIwIDE4Ij4gICAgPHBhdGggZmlsbD0iIzRBNEE0QSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNNC42MDUgNkw0IDYuNTUgMTAgMTJsNi01LjQ1LS42MDUtLjU1LTUuMzk4IDQuOTA1eiIvPjwvc3ZnPg==);
+$svg-arrow-right: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4gICAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNOCAxNS4zOTVsNC45MDUtNS4zOTJMOCA0LjYwNSA4LjU1IDQgMTQgMTBsLTUuNDUgNnoiLz48L3N2Zz4=);
+$svg-check: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23ff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+
+//--------------------------------
+//  SLICK CAROUSEL
+//--------------------------------
+
+$slick-arrow-bg-color: transparent;
+$slick-arrow-bg-color-hover: transparent;
+
+//--------------------------------
+//  MOTION
+//--------------------------------
+
+$ease-in-cubic-bezier: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-out-cubic-bezier: cubic-bezier(0.215, 0.61, 0.355, 1);
+$card-hover-scale: scale(1.25);
+$button-hover-scaley: scaleY(1.5);
+
+@keyframes easeInCubicMotion {
+    to {
+        transform: translate(150px);
+    }
+}
+
+@keyframes easeOutCubicMotion {
+    to {
+        transform: translate(150px);
+    }
+}
+
+$ease-in-cubic: easeInCubicMotion 200ms $ease-in-cubic-bezier;
+$ease-out-cubic: easeOutCubicMotion 200ms $ease-out-cubic-bezier;
