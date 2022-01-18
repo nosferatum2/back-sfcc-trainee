@@ -1,0 +1,15 @@
+.gradient-lin1 {
+    @include gradient-directional($start-color: $california, $end-color: $pomegranate, $deg: 62deg);
+}
+
+.gradient-lin2 {
+    @include gradient-directional($start-color: $mustard, $end-color: $pomegranate, $deg: 90deg);
+}
+
+.gradient-radial {
+    @include gradient-radial($inner-color: $picton-blue, $outer-color: $indigo);
+}
+
+.gradient-lin3 {
+    @include gradient-x-three-colors($start-color: $cornflower-blue, $mid-color: $daisy-bush, $color-stop: 50%, $end-color: $cerulean-blue);
+}

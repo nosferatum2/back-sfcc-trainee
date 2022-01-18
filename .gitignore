@@ -38,4 +38,8 @@ build_tools/temp
 build_tools/.cache/
 data_impex/*.zip
 
+# Training Patterns
+cartridges/app_storefront_arturvoshchanikin/cartridge/static/**/css/
+cartridges/app_storefront_arturvoshchanikin/cartridge/static/**/js/
+cartridges/app_storefront_arturvoshchanikin/cartridge/static/**/fonts/
 

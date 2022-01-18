@@ -1,0 +1,8 @@
+.container .breadcrumb {
+    border-radius: 0;
+    border-bottom: $border-width solid $gray-300;
+
+    &.search-results {
+        border-bottom: 0;
+    }
+}

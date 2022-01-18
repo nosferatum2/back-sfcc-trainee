@@ -1,0 +1,1 @@
+<p>${Resource.msgf('querysrting.my-param', 'common_en_US', null, pdict.myParam)}</p>

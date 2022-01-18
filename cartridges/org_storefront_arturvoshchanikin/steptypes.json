@@ -1,0 +1,45 @@
+{
+  "step-types": {
+    "script-module-step": [
+      {
+        "@type-id": "custom.newsletterVoshchanikin",
+        "@supports-parallel-execution": "true",
+        "@supports-site-context": "true",
+        "@supports-organization-context": "false",
+        "description": "Queries all newsletter subscriptions for last [input_param] hours, and sends a simple email to them.",
+        "module": "org_storefront_arturvoshchanikin/cartridge/scripts/steps/emailSender.js",
+        "function": "send",
+        "transactional": "true",
+        "timeout-in-seconds": "900",
+        "parameters": {
+          "parameter": [
+            {
+              "@name": "hours",
+              "@type": "long",
+              "@required": "true",
+              "description": "An optional string parameter, length must be between 1 and 24 hours",
+              "min-value": "1",
+              "max-value": "24"
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when the step failed with an error."
+            },
+            {
+              "@code": "FINISHED",
+              "description": "Used when the step finished successfully."
+            },
+            {
+              "@code": "FINISHED_WITH_WARNINGS",
+              "description": "Used when the step finished with warnings."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

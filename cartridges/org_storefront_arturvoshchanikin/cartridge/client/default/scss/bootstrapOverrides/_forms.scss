@@ -1,0 +1,21 @@
+.form-control {
+    font-size: $font-size-body;
+}
+
+.custom-control-input {
+    ~ .custom-control-label::before {
+        border: $border;
+    }
+
+    &:checked ~ .custom-control-label::before {
+        color: $custom-control-indicator-checked-color;
+        @include gradient-bg($custom-control-indicator-checked-bg);
+        @include box-shadow($custom-control-indicator-checked-box-shadow);
+    }
+
+    &:active ~ .custom-control-label::before {
+        color: $custom-control-indicator-active-color;
+        background-color: $custom-control-indicator-active-bg;
+    }
+}
+

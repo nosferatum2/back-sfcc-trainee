@@ -1,0 +1,11 @@
+.btn-group,
+.btn-group-vertical {
+    > .btn {
+        &:focus,
+        &:active,
+        &.active {
+            background-color: $contentswitcher-active-bg;
+            color: $contentswitcher-active-color;
+        }
+    }
+}
