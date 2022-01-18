@@ -60,7 +60,6 @@
                 <div class="row">
                     <isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}" />
                 </div>
-                <p>Test push</p>
             </div>
         </div>
         <div class="search-mobile d-sm-none">
