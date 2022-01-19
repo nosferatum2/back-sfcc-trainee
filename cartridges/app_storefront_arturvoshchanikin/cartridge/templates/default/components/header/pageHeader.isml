@@ -49,6 +49,7 @@
                             <div class="pull-right">
                                 <iscontentasset aid="home-show-url" />
                             </div>
+                            <p>Test commit3</p>
                         </div>
                     </div>
                 </div>
