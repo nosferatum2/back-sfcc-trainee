@@ -1,0 +1,44 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<iscomment>
+    Insert a content asset into the page
+    It takes template from app_storefront_base
+</iscomment>
+<ismodule template="/components/content/contentAsset"
+    name="contentasset"
+    attribute="aid"
+/>
+
+<iscomment>
+    Insert orderable product recommendation carousel based on recommendation type
+    recommendationType (integer) : Specify Recommendation Type to display - Default is Cross-sell(1)
+    title (string) : Title of the carousel
+    subtitle (string) : Subtitle of the carousel
+</iscomment>
+<ismodule template="product/components/recommendations"
+    name="productrec"
+    attribute="recommendationType"
+    attribute="title"
+    attribute="subtitle"
+/>
+
+<ismodule template="util/quantitySelector"
+    name="quantityselector"
+    attribute="selectedqty"
+    attribute="minqty"
+    attribute="maxqty"
+/>
+
+<iscomment>
+    Render the svg icon HTML based on the given name and other options
+    icon (string) : Icon file name (without the extension) to display
+    hidden (boolean) : Hides the icon from screen readers using aria-hidden
+    showBackground (boolean) : Adds a wrapper around the icon that can be used to show a background
+</iscomment>
+
+<ismodule template="components/svg"
+    name="svg"
+    attribute="icon"
+    attribute="hidden"
+    attribute="showBackground"
+/>
