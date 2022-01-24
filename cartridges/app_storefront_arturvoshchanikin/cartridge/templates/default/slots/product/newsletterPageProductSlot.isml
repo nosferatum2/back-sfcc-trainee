@@ -1,22 +1,25 @@
 <isinclude template="/components/modules" />
 
-<div class="homepage-product-listing row">
+<isif condition="${!empty(slotcontent)}">
+    <div class="homepage-product-listing row">
 
-    <isloop items="${slotcontent.content}" var="product" status="loopState">
+        <isloop items="${slotcontent.content}" var="product" status="loopState">
 
-        <div class="col-6 col-sm-4">
-            <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'pview', 'tile', 'ratings', true, 'swatches', true)}"/>
-        </div>
-
-        <iscomment> Choose place for a custom banner between products </iscomment>
-        <iscomment> loopState.count -- set current place. Starts from 0. </iscomment>
-        <isif condition="${loopState.count == 3}" >
-            <div class="card col-6 col-sm-4 hp-product-content">
-                <div class="card-body">
-                    <iscontentasset aid="home-product-tile-content" />
-                </div>
+            <div class="col-6 col-sm-4">
+                <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'pview', 'tile', 'ratings', true, 'swatches', true)}"/>
             </div>
-        </isif>
 
-    </isloop>
-</div>
+            <iscomment> loopState.count -- set current place. Starts from 0. </iscomment>
+            <iscomment> Choose place for a custom banner between products </iscomment>
+            
+            <isif condition="${loopState.count == 2}" >
+                <div class="card col-6 col-sm-4 hp-product-content">
+                    <div class="card-body">
+                        <iscontentasset aid="home-product-tile-content" />
+                    </div>
+                </div>
+            </isif>
+
+        </isloop>
+    </div>
+</isif>

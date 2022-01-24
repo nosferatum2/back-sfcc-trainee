@@ -77,10 +77,24 @@
         </div>
     </div>
     <div class="container">
+        <h3>Test slots</h3>
         <div class="row">
-            <h3>Test slot</h3>
-            <div class="hp-product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
-                <isslot id="avoshchanikin-products-m" description="Product tiles on the newsletter page." context="global" />
+            <div class="refinement-bar col-md-12">
+                <div class="refinements border border-dark">
+                    <div class="card-body content value">
+                        <iscomment> <isslot 
+                            id="avoshchanikin-categories-ref" 
+                            description="Category on the newsletter page."
+                            context="category" 
+                            context-object="${pdict.category}"/>
+                    </div> </iscomment>
+                </div>
+            </div>
+            <div class="hp-product-grid col-9" itemtype="http://schema.org/SomeProducts" itemid="#product">
+                <isslot 
+                    id="avoshchanikin-products-m" 
+                    description="Product tiles on the newsletter page."
+                    context="global" />
             </div>
         </div>
     </div>

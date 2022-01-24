@@ -1,0 +1,19 @@
+<isinclude template="/components/modules" />
+
+<isloop items="${pdict.productSearch.productIds}" var="product" status="loopState">
+    <div class="col-6 col-sm-4">
+        <isobject object="${product.productSearchHit}" view="searchhit">
+            <isinclude
+                url="${URLUtils.url('Tile-Show', 'pid', product.productID, 'swatches', true, 'ratings', true)}" />
+        </isobject>
+    </div>
+
+    <iscomment> loopState.count -- set current place. Starts from 0. </iscomment>
+    <iscomment> Choose place for a custom banner between products </iscomment>
+    <isif condition="${loopState.count == 1}">
+        <div class="col-6 col-sm-4">
+            <iscontentasset aid="home-product-tile-content" />
+        </div>
+    </isif>
+    
+</isloop>
