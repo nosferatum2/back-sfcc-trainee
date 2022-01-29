@@ -20,5 +20,8 @@
         <isslot id="avoshchanikin-categories-ref" context="category" description="avoshchanikin category"
             context-object="${pdict.category}" />
     </isif>
+    <iscomment> <div>
+        ${pdict.category.custom.avoshchanikinTilePos}
+    </div> </iscomment>
 
 </isdecorate>
