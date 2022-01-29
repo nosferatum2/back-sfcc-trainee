@@ -101,6 +101,25 @@
             </form>
         </div>
     </div>
+<<<<<<< HEAD
+=======
+    <div class="container">
+        <h3>Test slots</h3>
+        <div class="row">
+            <div class="refinement-bar col-md-12">
+                <div class="refinements border border-dark">
+                    <div class="card-body content value">
+                </div>
+            </div>
+            <div class="hp-product-grid col-9" itemtype="http://schema.org/SomeProducts" itemid="#product">
+                <isslot 
+                    id="avoshchanikin-products-m" 
+                    description="Product tiles on the newsletter page."
+                    context="global" />
+            </div>
+        </div>
+    </div>
+>>>>>>> 49c2c86f... Added: slotcategory, custom attrs on categotry obj
     <isscript>
 
     </isscript>
